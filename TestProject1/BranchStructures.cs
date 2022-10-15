@@ -39,13 +39,18 @@ public static class BranchStructures
             {
                 result = "IV";
             }
-            else if (x == 0)
+            else if (x == 0 && y!=0)
             {
                 result = "on Y axis";
             }
-            else
+            else if (y == 0 && x!=0)
             {
                 result = "on X axis";
+            }
+            else 
+            {
+                result = "on Zero";
+
             }
             return result;
         }
@@ -97,59 +102,59 @@ public static class BranchStructures
                 switch (fd)
                 {
                     case 2:
-                        decyatki = "двадцать ";
+                        decyatki = "двадцать";
                         break;
                     case 3:
-                        decyatki = "тридцать ";
+                        decyatki = "тридцать";
                         break;
                     case 4:
-                        decyatki = "сорок ";
+                        decyatki = "сорок";
                         break;
                     case 5:
-                        decyatki = "пятьдесят ";
+                        decyatki = "пятьдесят";
                         break;
                     case 6:
-                        decyatki = "шестьдесят ";
+                        decyatki = "шестьдесят";
                         break;
                     case 7:
-                        decyatki = "семьдесят ";
+                        decyatki = "семьдесят";
                         break;
                     case 8:
-                        decyatki = "восемьдесят ";
+                        decyatki = "восемьдесят";
                         break;
                     case 9:
-                        decyatki = "девяноста ";
+                        decyatki = "девяноста";
                         break;
                 }
                 int sd = a % 10;
                 switch (sd)
                 {
                     case 1:
-                        edinici = "один";
+                        edinici = " один";
                         break;
                     case 2:
-                        edinici = "два";
+                        edinici = " два";
                         break;
                     case 3:
-                        edinici = "три";
+                        edinici = " три";
                         break;
                     case 4:
-                        edinici = "четыре";
+                        edinici = " четыре";
                         break;
                     case 5:
-                        edinici = "пять";
+                        edinici = " пять";
                         break;
                     case 6:
-                        edinici = "шесть";
+                        edinici = " шесть";
                         break;
                     case 7:
-                        edinici = "семь";
+                        edinici = " семь";
                         break;
                     case 8:
-                        edinici = "восемь";
+                        edinici = " восемь";
                         break;
                     case 9:
-                        edinici = "девять";
+                        edinici = " девять";
                         break;
                 }
                 result = decyatki + edinici;

@@ -14,5 +14,27 @@ namespace TestProject1.tests
             int actual = BranchStructures.SolveAgreaterlessB(a, b);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(0,2,"on Y axis")]
+        [TestCase(2,0,"on X axis")]
+        [TestCase(2,2,"I")]
+        [TestCase(-2,2,"II")]
+        [TestCase(0,0,"on Zero")]
+        [TestCase(2,-2,"IV")]
+        [TestCase(-2,-2,"III")]
+        public void FindQuarterPlaceofDotTest(int x, int y, string expected)
+        {
+            string actual = BranchStructures.FindQuarterPlaceofDot(x, y);
+            Assert.AreEqual(expected, actual); 
+        }
+
+        [TestCase(25,"двадцать пять")]
+        [TestCase(30,"тридцать")]
+        [TestCase(16,"шестнадцать")]
+        public void WriteDigitinStringTest(int a, string expected)
+        {
+            string actual = BranchStructures.WriteDigitinString(a);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
