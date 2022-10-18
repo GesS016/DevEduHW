@@ -15,7 +15,7 @@ namespace TestProject1.tests
         }
 
         [TestCase(2,2)]
-        public void SolveExampleTest_AisEqualB_ShouldThrowArgumentException(int a, int b)
+        public void SolveExampleTest_WhenAisEqualB_ThenShouldThrowArgumentException(int a, int b)
         {
             Assert.Throws<ArgumentException>(() => Variables.SolveExample(a, b));
         }
@@ -31,7 +31,7 @@ namespace TestProject1.tests
         }
 
         [TestCase(0,1,2)]
-        public void SolveEquationTest_AisEqualZero_ShouldThrowArgumentException(int a, int b, int c)
+        public void SolveEquationTest_WhenAisEqualZero_ThenShouldThrowArgumentException(int a, int b, int c)
         {
             Assert.Throws<ArgumentException>(() => Variables.SolveEquation(a,b,c));
         }
@@ -43,7 +43,8 @@ namespace TestProject1.tests
             Assert.AreEqual(expected, actual);
         }
 
-        public void FindStraightLineEquationTest_SameDot_ShouldThrowArgumentException(int x1, int y1, int x2, int y2)
+        [TestCase(1,2,1,2)]
+        public void FindStraightLineEquationTest_WhenSameDot_ThenShouldThrowArgumentException(int x1, int y1, int x2, int y2)
         {
             Assert.Throws<ArgumentException>(()=> Variables.FindStraightLineEquation(x1, y1, x2, y2));
         }
