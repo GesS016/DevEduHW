@@ -61,5 +61,27 @@ public static class Arrays
             }
             return i;
         }
+
+        public static int[] SortingwithBubbleIncrease(int[] array)
+        {
+            int i = 0;
+            int min=array[i];
+            int max=array[i+1];
+            while(i<=array.Length)
+            {
+                if(min<=max)
+                {
+                    i++;
+                }
+                else if(min>max)
+                {
+                    int temp = min;
+                    min = max;
+                    max = temp;
+                    i++;
+                }
+            }
+            return array;
+        }
     }
 }
