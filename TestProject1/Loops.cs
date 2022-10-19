@@ -8,7 +8,7 @@ namespace TestProject1
 {
     public static class Loops
     {
-        public static double FindAinPowerB(int a, int b)
+        public static double FindAinPowerB(int a, int b) //1
         {
             double result = a;
             if (b > 0)
@@ -37,14 +37,87 @@ namespace TestProject1
             }
         }
 
-        public static int FindQuantityofNumbersSquareLessA(int a)
+        public static int FindQuantityofNumbersSquareLessA(int a) //3
         {
+            if (a < 0)
+            {
+                throw new ArgumentException("a<0");
+            }
             double b=Math.Sqrt(a);
             int c = 1;
             int result = 0;
             while(c<b)
             {
                 result++;
+                c++;
+            }
+            return result;
+        }
+
+        public static int FindMaxDelitelA(int a) //4
+        {
+            if(a<=1)
+            {
+                throw new ArgumentException("a<=1");
+            }
+            int b = 2;
+            while(a%b!=0)
+            {
+                b++;
+            }
+            int result = a / b;
+            return result;
+        }
+
+        public static int FindSumofNumbersDividedtoSeven(int a, int b)
+        {
+            if(a==b)
+            {
+                throw new ArgumentException("a=b");
+            }
+            int result = 0;
+            if (a>b)
+            {
+                for(int i = b; i <= a; i++)
+                {
+                    if(i%7==0)
+                    {
+                        result = result + i;
+                    }
+                }
+            }
+            if(b>a)
+            {
+                for (int i = a ;i <= b; i++)
+                {
+                    if(i%7==0)
+                    {
+                        result = result + i;
+                    }
+                }
+            }
+            return result;
+        }
+
+        public static int FindNthNumberFibonacci(int N)
+        {
+            int a = 1;
+            int b = 1;
+            int c;
+            int result;
+            if(N==1 || N==2)
+            {
+                result = 1;
+            }
+            else
+            {
+                for (int i = 3; i <= N; i++)
+                {
+                    c = a + b;
+                    a = b;
+                    b = c;
+                }
+                result = b;
             }
             return result;
         }
