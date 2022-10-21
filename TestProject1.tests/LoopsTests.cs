@@ -34,7 +34,6 @@ public class LoopsTests
         }
         [TestCase(18,9)]
         [TestCase(17,1)]
-        [TestCase(0,0)]
         public void FindMaxDelitelATest(int a, int expected)
         {
             int actual=Loops.FindMaxDelitelA(a);
@@ -73,6 +72,34 @@ public class LoopsTests
         {
             int acutal=Loops.FindNthNumberFibonacci(N);
             Assert.AreEqual(expected, acutal);
+        }
+
+        [TestCase(30,18,6)]
+        [TestCase(36,18,18)]
+        [TestCase(18,36,18)]
+        [TestCase(36,36,36)]
+        public void FindGreatestCommonDivisorEuclidTest(int firstNumber, int secondNumber,int expected)
+        {
+            int actual=Loops.FindGreatestCommonDivisorEuclid(firstNumber, secondNumber);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(0,0)]
+        [TestCase(0,15)]
+        [TestCase(12,0)]
+        public void FindGreatestCommonDivisorEuclidTest_WhenAnyofNumbersisZero_ThenShouldThrowArgumentException(int firstNumber, int secondNumber)
+        {
+            Assert.Throws<ArgumentException>(() => Loops.FindGreatestCommonDivisorEuclid(firstNumber, secondNumber));
+        }
+
+        [TestCase(982,1)]
+        [TestCase(882,0)]
+        [TestCase(902,1)]
+        [TestCase(-902,1)]
+        public void FindEvenDigitsTest(int number, int expected)
+        {
+            int actual=Loops.FindEvenDigits(number);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

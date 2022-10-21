@@ -37,29 +37,32 @@ public static class Arrays
         public static int FindIndexofMinValue(int[] array)
         {
             int min = array[0];
-            int i;
-            for (i = 1; i < array.Length; i++)
+            int indexOfMin=0;
+            for (int i = 1; i < array.Length; i++)
             {
                 if (min > array[i])
                 {
                     min = array[i];
+                    indexOfMin = i;
                 }
             }
-            return i;
+            return indexOfMin;
         }
 
         public static int FindIndexofMaxValue(int[] array)
         {
             int max = array[0];
-            int i;
-            for (i = 1; i < array.Length; i++)
+            int indexOfMax=0;
+            for (int i = 1; i < array.Length; i++)
             {
                 if (max < array[i])
                 {
                     max = array[i];
+                    indexOfMax = i;
+
                 }
             }
-            return i;
+            return indexOfMax;
         }
 
         public static int[] SortingwithBubbleIncrease(int[] array)

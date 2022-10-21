@@ -121,5 +121,65 @@ namespace TestProject1
             }
             return result;
         }
+
+        public static int FindGreatestCommonDivisorEuclid(int firstNumber,int secondNumber)
+        {
+            int result=0;
+            int remainder;
+            if(firstNumber==0 || secondNumber==0)
+            {
+                throw new ArgumentException("Divide to zero exception");
+            }
+            if (firstNumber >= secondNumber)
+            {
+                if (firstNumber % secondNumber == 0)
+                {
+                    result= secondNumber;
+                }
+                else
+                {
+                    while (firstNumber % secondNumber != 0)
+                    {
+                        remainder = secondNumber;
+                        secondNumber = firstNumber % secondNumber;
+                        firstNumber = remainder;
+                    }
+                    result= secondNumber;
+                }
+            }
+            if (secondNumber > firstNumber)
+            {
+                if (secondNumber % firstNumber == 0)
+                {
+                    result= firstNumber;
+                }
+                else
+                {
+                    while (secondNumber % firstNumber != 0)
+                    {
+                        remainder = firstNumber;
+                        firstNumber = secondNumber % firstNumber;
+                        secondNumber = remainder;
+                    }
+                    result= firstNumber;
+                }
+            }
+            return result;
+        }
+
+        public static int FindEvenDigits(int number)
+        {
+            int evenDigit = 0;
+            while (number % 10 != 0 || number / 10 != 0)
+            {
+                int digit = number % 10;
+                number = number / 10;
+                if (digit % 2 != 0)
+                {
+                    evenDigit++;
+                }
+            }
+            return evenDigit;
+        }
     }
 }
