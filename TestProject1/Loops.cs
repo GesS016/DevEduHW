@@ -44,17 +44,17 @@ namespace TestProject1
                 throw new ArgumentException("a<0");
             }
             double b=Math.Sqrt(a);
-            int c = 1;
+            int quantity = 1;
             int result = 0;
-            while(c<b)
+            while(quantity<b)
             {
                 result++;
-                c++;
+                quantity++;
             }
             return result;
         }
 
-        public static int FindMaxDelitelA(int a) //4
+        public static int FindMaxDivisorA(int a) //4
         {
             if(a<=1)
             {
@@ -101,9 +101,9 @@ namespace TestProject1
 
         public static int FindNthNumberFibonacci(int N)
         {
-            int a = 1;
-            int b = 1;
-            int c;
+            int firstOfThree = 1;
+            int secondOfThree = 1;
+            int thirdOfThree;
             int result;
             if(N==1 || N==2)
             {
@@ -113,11 +113,11 @@ namespace TestProject1
             {
                 for (int i = 3; i <= N; i++)
                 {
-                    c = a + b;
-                    a = b;
-                    b = c;
+                    thirdOfThree = firstOfThree + secondOfThree;
+                    firstOfThree = secondOfThree;
+                    secondOfThree = thirdOfThree;
                 }
-                result = b;
+                result = secondOfThree;
             }
             return result;
         }

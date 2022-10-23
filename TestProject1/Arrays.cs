@@ -10,6 +10,10 @@ public static class Arrays
     {
         public static int FindMinValue(int[] array)
         {
+            if (array.Length==0)
+            {
+                throw new ArgumentException("array is empty");
+            }
             int min = array[0];
             for(int i=1;i<array.Length; i++)
             {
@@ -23,6 +27,10 @@ public static class Arrays
 
         public static int FindMaxValue(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
             int max = array[0];
             for (int i = 1; i < array.Length; i++)
             {
@@ -36,6 +44,10 @@ public static class Arrays
 
         public static int FindIndexofMinValue(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
             int min = array[0];
             int indexOfMin=0;
             for (int i = 1; i < array.Length; i++)
@@ -51,6 +63,10 @@ public static class Arrays
 
         public static int FindIndexofMaxValue(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
             int max = array[0];
             int indexOfMax=0;
             for (int i = 1; i < array.Length; i++)
@@ -67,6 +83,10 @@ public static class Arrays
 
         public static int FindSumOfNumbersWithEvenIndex(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
             int sum = 0;
             for(int i = 1; i < array.Length; i+=2)
             {
@@ -77,6 +97,10 @@ public static class Arrays
 
         public static int[] ReverseArray(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
             int temp;
             int lastIndex=array.Length-1;
                 for (int i = 0; i < array.Length/ 2; i++)
@@ -92,6 +116,10 @@ public static class Arrays
 
         public static int FindSumOfEvenNumbersInArray(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
             int sum=0;
             for(int i = 0; i < array.Length; i++)
             {
@@ -105,6 +133,10 @@ public static class Arrays
 
         public static int[] ReverseTwoHalfsOfArray(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
             int temp;
             int firstIndexOfHalf;
             if(array.Length%2!=0)

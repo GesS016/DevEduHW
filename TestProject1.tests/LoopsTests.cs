@@ -34,17 +34,17 @@ public class LoopsTests
         }
         [TestCase(18,9)]
         [TestCase(17,1)]
-        public void FindMaxDelitelATest(int a, int expected)
+        public void FindMaxDivisorATest(int a, int expected)
         {
-            int actual=Loops.FindMaxDelitelA(a);
+            int actual=Loops.FindMaxDivisorA(a);
             Assert.AreEqual(expected, actual);
         }
 
         [TestCase(1)]
         [TestCase(0)]
-        public void FindMaxDelitelATest_WhenAisLessTwo_ThenShouldThrowArgumentException(int a)
+        public void FindMaxDivisorlATest_WhenAisLessTwo_ThenShouldThrowArgumentException(int a)
         {
-            Assert.Throws<ArgumentException>(() => Loops.FindMaxDelitelA(a));
+            Assert.Throws<ArgumentException>(() => Loops.FindMaxDivisorA(a));
         }
 
         [TestCase(5,20,21)]

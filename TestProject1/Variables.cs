@@ -18,8 +18,8 @@
             {
                 throw new ArgumentException("a==0");
             }
-            int result = (c - b) / a;
-            return result;
+            int x = (c - b) / a;
+            return x;
         }
         
 
