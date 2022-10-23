@@ -115,6 +115,7 @@ public class LoopsTests
         [TestCase(0,415067, true)]
         [TestCase(415067, 0, true)]
         [TestCase(0, 0, true)]
+        [TestCase(-234, -334, true)]
         public void FindifThereAreSameNumbersTest(int firstnumber, int secondNumber, bool expected)
         {
             bool actual=Loops.FindifThereAreSameNumbers(firstnumber, secondNumber);

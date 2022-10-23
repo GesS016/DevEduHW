@@ -48,5 +48,12 @@ namespace TestProject1.tests
             string actual=BranchStructures.WriteThreeNumbersIncrease(firstNumber, secondNumber, thirdNumber);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(1,-2,-24,"x1=6,x2=-4")]
+        public void SolveSqaureEquation(double a, double b, double c, string expected)
+        {
+            string actual = BranchStructures.SolveSqaureEquation(a, b, c);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

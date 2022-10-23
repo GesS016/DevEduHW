@@ -102,26 +102,51 @@ public static class Arrays
             }
             return sum;
         }
-        public static int[] SortingwithBubbleIncrease(int[] array)
+
+        public static int[] ReverseTwoHalfsOfArray(int[] array)
         {
-            int i = 0;
-            int min=array[i];
-            int max=array[i+1];
-            while(i<=array.Length)
+            int temp;
+            int firstIndexOfHalf;
+            if(array.Length%2!=0)
             {
-                if(min<=max)
-                {
-                    i++;
-                }
-                else if(min>max)
-                {
-                    int temp = min;
-                    min = max;
-                    max = temp;
-                    i++;
-                }
+                firstIndexOfHalf=array.Length/2+1;
+            }
+            else
+            {
+                firstIndexOfHalf = array.Length / 2;
+            }
+            for(int i = 0; i < array.Length/2; i++)
+            {
+                temp = array[i];
+                array[i]=array[firstIndexOfHalf];
+                array[firstIndexOfHalf] =temp;
+                firstIndexOfHalf++;
             }
             return array;
         }
+
+        //public static int[] SortingwithBubbleIncrease(int[] array)
+        //{
+        //    int i = 0;
+        //    int min;
+        //    int max;
+        //    while(i<array.Length)
+        //    {
+        //        min = array[i];
+        //        max = array[i+1];
+        //        if(min<=max)
+        //        {
+        //            i++;
+        //        }
+        //        else if(min>max)
+        //        {
+        //            int temp = min;
+        //            min = max;
+        //            max = temp;
+        //            i = -2;
+        //        }
+        //    }
+        //    return array;
+        //}
     }
 }
