@@ -36,5 +36,17 @@ namespace TestProject1.tests
             string actual = BranchStructures.WriteDigitinString(a);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(1,2,3,"1,2,3")]
+        [TestCase(1,3,2,"1,2,3")]
+        [TestCase(3,1,2,"1,2,3")]
+        [TestCase(3,2,1,"1,2,3")]
+        [TestCase(2,1,3,"1,2,3")]
+        [TestCase(2,3,1,"1,2,3")]
+        public void WriteThreeNumbersIncreaseTest(int firstNumber, int secondNumber, int thirdNumber, string expected)
+        {
+            string actual=BranchStructures.WriteThreeNumbersIncrease(firstNumber, secondNumber, thirdNumber);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

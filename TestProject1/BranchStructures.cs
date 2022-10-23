@@ -1,6 +1,6 @@
 ﻿namespace TestProject1
 {
-public static class BranchStructures
+    public static class BranchStructures
     {
         public static int SolveAgreaterlessB(int a, int b) //1
         {
@@ -39,15 +39,15 @@ public static class BranchStructures
             {
                 result = "IV";
             }
-            else if (x == 0 && y!=0)
+            else if (x == 0 && y != 0)
             {
                 result = "on Y axis";
             }
-            else if (y == 0 && x!=0)
+            else if (y == 0 && x != 0)
             {
                 result = "on X axis";
             }
-            else 
+            else
             {
                 result = "on Zero";
 
@@ -158,6 +158,44 @@ public static class BranchStructures
                         break;
                 }
                 result = decyatki + edinici;
+            }
+            return result;
+        }
+        public static string WriteThreeNumbersIncrease(int firstNumber, int secondNumber, int thirdNumber)
+        {
+            string result="";
+            if (firstNumber >= secondNumber && firstNumber >= thirdNumber)
+            {
+                if (secondNumber >= thirdNumber)
+                {
+                    result = ($"{thirdNumber},{secondNumber},{firstNumber}");
+                }
+                else
+                {
+                    result = ($"{secondNumber},{thirdNumber},{firstNumber}");
+                }
+            }
+            if (secondNumber >= firstNumber && secondNumber >= thirdNumber)
+            {
+                if (firstNumber >= thirdNumber)
+                {
+                    result = ($"{thirdNumber},{firstNumber},{secondNumber}");
+                }
+                else
+                {
+                    result = ($"{firstNumber},{thirdNumber},{secondNumber}");
+                }
+            }
+            if (thirdNumber >= firstNumber && thirdNumber >= secondNumber)
+            {
+                if (firstNumber >= secondNumber)
+                {
+                    result = ($"{secondNumber},{firstNumber},{thirdNumber}");
+                }
+                else
+                {
+                    result = ($"{firstNumber},{secondNumber},{thirdNumber}");
+                }
             }
             return result;
         }
