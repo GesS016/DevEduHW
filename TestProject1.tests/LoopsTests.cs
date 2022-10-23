@@ -121,5 +121,12 @@ public class LoopsTests
             bool actual=Loops.FindifThereAreSameNumbers(firstnumber, secondNumber);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(100,new int[] {100,200,300,400,500,600,700,800,900,1000})]
+        public void FindNumbersDividedToATest(int divider, int[] expected)
+        {
+            int[] actual=Loops.FindNumbersDividedToA(divider);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -127,11 +127,18 @@ namespace TestProject1.tests
         {
             Assert.Throws<ArgumentException>(() => Arrays.FindMinValue(array));
         }
-        //[TestCase(new int[] {5,8,12,7,1},new int[] {1,5,7,8,12})]
-        //public void SortingwithBubbleIncreaseTest(int[] array, int[] expected)
-        //{
-        //    int[] actual = Arrays.SortingwithBubbleIncrease(array);
-        //    Assert.AreEqual(expected, actual);
-        //}
+
+        [TestCase(new int[] { 98, 8, 7, 5 }, new int[] {5,7,8,98})]
+        public void SortWithSelectIncreaseTest(int[] array, int[] expected)
+        {
+            int[] actual = Arrays.SortWithSelectIncrease(array);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] { })]
+        public void SortWithSelectIncreaseTest_WhenArrayIsEmpty_ThenShouldThrowArgumentException(int[] array)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.SortWithSelectIncrease(array));
+        }
     }
 }

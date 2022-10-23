@@ -157,28 +157,27 @@ public static class Arrays
             return array;
         }
 
-        //public static int[] SortingwithBubbleIncrease(int[] array)
-        //{
-        //    int i = 0;
-        //    int min;
-        //    int max;
-        //    while(i<array.Length)
-        //    {
-        //        min = array[i];
-        //        max = array[i+1];
-        //        if(min<=max)
-        //        {
-        //            i++;
-        //        }
-        //        else if(min>max)
-        //        {
-        //            int temp = min;
-        //            min = max;
-        //            max = temp;
-        //            i = -2;
-        //        }
-        //    }
-        //    return array;
-        //}
+        public static int[] SortWithSelectIncrease(int[] array)
+        {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException("Array is empty");
+            }
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                int IndexOfMin = i;
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[IndexOfMin])
+                    {
+                        IndexOfMin = j;
+                    }
+                }
+                int tmp = array[IndexOfMin];
+                array[IndexOfMin] = array[i];
+                array[i] = tmp;
+            }
+            return array;
+        }
     }
 }

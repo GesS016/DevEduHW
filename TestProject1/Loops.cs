@@ -195,22 +195,6 @@ namespace TestProject1
 
         public static bool FindifThereAreSameNumbers(int firstNumber, int secondNumber)
         {
-            //int digitOfFirstNumber = 0;
-            //int digitOfSecondNumber = 1;
-            //bool result = false;
-            //bool positiveResult = true;
-            //    while (digitOfFirstNumber != digitOfSecondNumber || firstNumber != 0 || secondNumber != 0)
-            //    {
-            //        digitOfFirstNumber = firstNumber % 10;
-            //        digitOfSecondNumber = secondNumber % 10;
-            //        firstNumber /= 10;
-            //        secondNumber /= 10;
-            //        if (digitOfFirstNumber == digitOfSecondNumber)
-            //        {
-            //            result = positiveResult;
-            //        }
-            //    }
-            //return result;
             int temp = secondNumber;
             if(firstNumber == secondNumber)
             {
@@ -256,6 +240,24 @@ namespace TestProject1
                     }
                 }
             return false;
+        }
+
+        public static int[] FindNumbersDividedToA(int divider)
+        {
+            int i = 0;
+            int n= 1000 / divider;
+            int[] array =new int[n];
+            int number=1;
+            while(number<=1000)
+            {
+                if(number%divider==0)
+                {
+                    array[i] = number;
+                    i++;
+                }
+                number++;
+            }
+            return array;
         }
     }
 }
