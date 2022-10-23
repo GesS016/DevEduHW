@@ -65,6 +65,43 @@ public static class Arrays
             return indexOfMax;
         }
 
+        public static int FindSumOfNumbersWithEvenIndex(int[] array)
+        {
+            int sum = 0;
+            for(int i = 1; i < array.Length; i+=2)
+            {
+                sum += array[i];
+            }
+            return sum;
+        }
+
+        public static int[] ReverseArray(int[] array)
+        {
+            int temp;
+            int lastIndex=array.Length-1;
+                for (int i = 0; i < array.Length/ 2; i++)
+                {
+                    temp = array[i];
+                    array[i] = array[lastIndex];
+                    array[lastIndex] = temp;
+                    lastIndex --;
+                }
+            return array;
+
+        }
+
+        public static int FindSumOfEvenNumbersInArray(int[] array)
+        {
+            int sum=0;
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (array[i]%2!=0)
+                {
+                    sum += array[i];
+                }
+            }
+            return sum;
+        }
         public static int[] SortingwithBubbleIncrease(int[] array)
         {
             int i = 0;

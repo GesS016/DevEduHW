@@ -181,5 +181,81 @@ namespace TestProject1
             }
             return evenDigit;
         }
+        public static int FindMirrorNumber(int number)
+        {
+            int result = 0;
+            while (number % 10 != 0 || number / 10 != 0)
+            {
+                int digit = number % 10;
+                result = result * 10 + digit;
+                number = number / 10;
+            }
+            return result;
+        }
+
+        public static bool FindifThereAreSameNumbers(int firstNumber, int secondNumber)
+        {
+            //int digitOfFirstNumber = 0;
+            //int digitOfSecondNumber = 1;
+            //bool result = false;
+            //bool positiveResult = true;
+            //    while (digitOfFirstNumber != digitOfSecondNumber || firstNumber != 0 || secondNumber != 0)
+            //    {
+            //        digitOfFirstNumber = firstNumber % 10;
+            //        digitOfSecondNumber = secondNumber % 10;
+            //        firstNumber /= 10;
+            //        secondNumber /= 10;
+            //        if (digitOfFirstNumber == digitOfSecondNumber)
+            //        {
+            //            result = positiveResult;
+            //        }
+            //    }
+            //return result;
+            int temp = secondNumber;
+            if(firstNumber == secondNumber)
+            {
+                return true;
+            }
+            if (firstNumber==0)
+            {
+                while (secondNumber != 0)
+                {
+                    int digitOfSecondNumber = secondNumber % 10;
+                    secondNumber /= 10;
+                    if (firstNumber == digitOfSecondNumber)
+                    {
+                        return true;
+                    }
+                }
+            }
+            if(secondNumber==0)
+            {
+                while (firstNumber != 0)
+                {
+                    int digitOfFirstNumber = firstNumber % 10;
+                    firstNumber /= 10;
+                    if (secondNumber == digitOfFirstNumber)
+                    {
+                        return true;
+                    }
+                }
+            }
+            while(firstNumber!=0)
+                {
+                    int digitOfFirstNumber = firstNumber % 10;
+                    firstNumber /= 10;
+                    secondNumber = temp;
+                    while (secondNumber!=0)
+                    {
+                        int digitOfSecondNumber = secondNumber % 10;
+                        secondNumber /= 10;
+                        if (digitOfFirstNumber == digitOfSecondNumber)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            return false;
+        }
     }
 }

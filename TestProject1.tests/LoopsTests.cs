@@ -101,5 +101,24 @@ public class LoopsTests
             int actual=Loops.FindEvenDigits(number);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(65434,43456)]
+        [TestCase(1000,1)]
+        public void FindMirrorNumberTest(int number, int expected)
+        {
+            int actual = Loops.FindMirrorNumber(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(123,4567, false)]
+        [TestCase(123,41567, true)]
+        [TestCase(0,415067, true)]
+        [TestCase(415067, 0, true)]
+        [TestCase(0, 0, true)]
+        public void FindifThereAreSameNumbersTest(int firstnumber, int secondNumber, bool expected)
+        {
+            bool actual=Loops.FindifThereAreSameNumbers(firstnumber, secondNumber);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
